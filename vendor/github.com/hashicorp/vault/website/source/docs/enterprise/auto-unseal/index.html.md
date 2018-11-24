@@ -1,6 +1,7 @@
 ---
 layout: "docs"
 page_title: "Vault Enterprise Auto Unseal"
+sidebar_title: "Auto Unseal"
 sidebar_current: "docs-vault-enterprise-auto-unseal"
 description: |-
   Vault Enterprise supports automatic unsealing via cloud technologies like KMS.
@@ -21,7 +22,7 @@ specify the `seal` stanza in your Vault configuration file:
 
 ```hcl
 seal "awskms" {
-  aws_region = "us-east-1"
+  region = "us-east-1"
   access_key = "..."
   secret_key = "..."
   kms_key_id = "..."

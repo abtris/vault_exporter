@@ -1,17 +1,17 @@
 ---
 layout: "api"
-page_title: "Identity Secret Backend - HTTP API"
-sidebar_current: "docs-http-secret-identity"
+page_title: "Identity - Secrets Engines - HTTP API"
+sidebar_title: "Identity"
+sidebar_current: "api-http-secret-identity"
 description: |-
-  This is the API documentation for the Vault Identity secret backend.
+  This is the API documentation for the Vault Identity secrets engine.
 ---
 
-# Identity Secret Backend HTTP API
+# Identity Secrets Engine (API)
 
-This is the API documentation for the Vault Identity secret backend. For
-general information about the usage and operation of the Identity backend,
-please see the
-[Vault Identity backend documentation](/docs/secrets/identity/index.html).
+This is the API documentation for the Vault Identity secrets engine. For general
+information about the usage and operation of the Identity secrets engine, please
+see the [Vault Identity documentation](/docs/secrets/identity/index.html).
 
 ## API Sections
 

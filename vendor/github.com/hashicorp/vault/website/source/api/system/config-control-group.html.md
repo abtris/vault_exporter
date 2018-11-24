@@ -1,7 +1,8 @@
 ---
 layout: "api"
 page_title: "/sys/config/control-group - HTTP API"
-sidebar_current: "docs-http-system-config-control-group"
+sidebar_title: "<tt>/sys/config/control-group</tt>"
+sidebar_current: "api-http-system-config-control-group"
 description: |-
   The '/sys/config/control-group' endpoint configures control groups.
 ---
@@ -26,7 +27,7 @@ This endpoint returns the current Control Group configuration.
 ```
 $ curl \
     --header "X-Vault-Token: ..." \
-    https://vault.rocks/v1/sys/config/control-group
+    http://127.0.0.1:8200/v1/sys/config/control-group
 ```
 
 ### Sample Response
@@ -64,7 +65,7 @@ $ curl \
     --header "X-Vault-Token: ..." \
     --request PUT \
     --data @payload.json \
-    https://vault.rocks/v1/sys/config/control-group
+    http://127.0.0.1:8200/v1/sys/config/control-group
 ```
 
 ## Delete Control Group Settings
@@ -81,5 +82,5 @@ This endpoint removes any control group configuration.
 $ curl \
     --header "X-Vault-Token: ..." \
     --request DELETE \
-    https://vault.rocks/v1/sys/config/control-group
+    http://127.0.0.1:8200/v1/sys/config/control-group
 ```

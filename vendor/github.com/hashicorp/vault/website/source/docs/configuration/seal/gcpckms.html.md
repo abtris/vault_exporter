@@ -1,6 +1,7 @@
 ---
 layout: "docs"
 page_title: "GCP Cloud KMS - Seals - Configuration"
+sidebar_title: "GCP Cloud KMS <sup>ENT</sup>"
 sidebar_current: "docs-configuration-seal-gcpckms"
 description: |-
   The GCP Cloud KMS seal configures Vault to use GCP Cloud KMS as the seal wrapping
@@ -42,7 +43,7 @@ These parameters apply to the `seal` stanza in the Vault configuration file:
 - `credentials` `(string: <required>)`: The path to the credentials JSON file
   to use. May be also specified by the `GOOGLE_CREDENTIALS` or
   `GOOGLE_APPLICATION_CREDENTIALS` environment variable or set automatically if
-  running under Google App Engine, Google Compute Engine or Google Container
+  running under Google App Engine, Google Compute Engine or Google Kubernetes
   Engine.
 
 - `project` `(string: <required>)`: The GCP project ID to use. May also be
@@ -60,7 +61,7 @@ These parameters apply to the `seal` stanza in the Vault configuration file:
 
 ## Authentication
 
-Authentication-related values must be provided, either as enviroment
+Authentication-related values must be provided, either as environment
 variables or as configuration parameters.
 
 ```text
@@ -86,3 +87,11 @@ environment variables:
 * `VAULT_GCPCKMS_SEAL_KEY_RING`
 * `VAULT_GCPCKMS_SEAL_CRYPTO_KEY`
 ```
+
+## Key Rotation
+
+This seal supports rotating keys defined in Google Cloud KMS 
+[doc](https://cloud.google.com/kms/docs/rotating-keys). Both scheduled rotation and manual 
+rotation is supported for CKMS since the key information. Old keys version must not be 
+disabled or deleted and are used to decrypt older data. Any new or updated data will be 
+encrypted with the primary key version.

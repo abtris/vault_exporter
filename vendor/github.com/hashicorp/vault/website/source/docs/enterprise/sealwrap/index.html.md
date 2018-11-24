@@ -1,6 +1,7 @@
 ---
 layout: "docs"
 page_title: "Vault Enterprise Seal Wrap"
+sidebar_title: "Seal Wrap / FIPS 140-2"
 sidebar_current: "docs-vault-enterprise-sealwrap"
 description: |-
   Vault Enterprise features a mechanism to wrap values with an extra layer of
@@ -17,6 +18,24 @@ environments, including FIPS 140-2 environments.
 To use this feature, you must have an active or trial license for Vault
 Enterprise (HSMs) or Vault Pro (AWS KMS). To start a trial, contact [HashiCorp
 sales](mailto:sales@hashicorp.com).
+
+## Enabling/Disabling
+
+Seal Wrap is enabled by default on supporting seals. This implies that the seal
+must be available throughout Vault's runtime. Most cloud-based seals should be
+quite reliable, but, for instance, if using an HSM in a non-HA setup a
+connection interruption to the HSM will result in issues with Vault
+functionality.
+
+To disable seal wrapping, set `disable_sealwrap = true` in Vault's
+[configuration file][configuration]. This will not affect auto-unsealing functionality; Vault's
+master key will still be protected by the seal wrapping mechanism. It will
+simply prevent other storage entries within Vault from being seal wrapped.
+
+*N.B.*: This is a lazy downgrade; as keys are accessed or written their seal
+wrapping status will change. Similarly, if the flag is removed, it will be a
+lazy upgrade (which is the case when initially upgrading to a seal
+wrap-supporting version of Vault).
 
 ## FIPS 140-2 Compliance
 
@@ -38,6 +57,8 @@ evaluated by the auditors.
 
 * Root tokens
 * Replication secondary activation tokens
+* Client authentication information for the GCP Auth Backend
+* Client authentication information for the Kubernetes Auth Backend
 
 ## Activating Seal Wrapping
 
@@ -86,3 +107,5 @@ replication traffic; in the meantime, a transparent TCP proxy that supports
 certified FIPS 140-2 TLS (such as
 [stunnel](https://www.stunnel.org/index.html)) can be used for replication
 traffic if meeting KeyTransit requirements for replication is necessary.
+
+[configuration]: /docs/configuration/index.html

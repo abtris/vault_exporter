@@ -1,7 +1,8 @@
 ---
 layout: "api"
 page_title: "/sys/control-group - HTTP API"
-sidebar_current: "docs-http-system-control-group"
+sidebar_title: "<tt>/sys/control-group</tt>"
+sidebar_current: "api-http-system-control-group"
 description: |-
   The '/sys/control-group' endpoint handles the Control Group workflow.
 ---
@@ -35,7 +36,7 @@ $ curl \
     --header "X-Vault-Token: ..." \
     --request POST \
     --data @payload.json \
-    https://vault.rocks/v1/sys/control-group/authorize
+    http://127.0.0.1:8200/v1/sys/control-group/authorize
 ```
 
 ### Sample Response
@@ -75,7 +76,7 @@ $ curl \
     --header "X-Vault-Token: ..." \
     --request POST \
     --data @payload.json \
-    https://vault.rocks/v1/sys/control-group/request
+    http://127.0.0.1:8200/v1/sys/control-group/request
 ```
 
 ### Sample Response
