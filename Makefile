@@ -1,4 +1,4 @@
-VERSION           ?= v0.1.1
+VERSION           ?= v0.1.2
 COMMIT            ?= $(shell git rev-parse --short HEAD)
 IMAGE_NAME        ?= grapeshot/vault_exporter
 DOCKER_IMAGE      ?= $(IMAGE_NAME):$(COMMIT)
