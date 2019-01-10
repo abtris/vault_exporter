@@ -1,7 +1,8 @@
 ---
 layout: "api"
 page_title: "Identity Secret Backend: Lookup - HTTP API"
-sidebar_current: "docs-http-secret-identity-lookup"
+sidebar_title: "Lookup"
+sidebar_current: "api-http-secret-identity-lookup"
 description: |-
   This is the API documentation for entity and group lookups from identity
   store.
@@ -46,7 +47,7 @@ $ curl \
     --header "X-Vault-Token: ..." \
     --request POST \
     --data @payload.json \
-    https://vault.rocks/v1/identity/lookup/entity
+    http://127.0.0.1:8200/v1/identity/lookup/entity
 ```
 
 ### Sample Response
@@ -108,7 +109,7 @@ $ curl \
     --header "X-Vault-Token: ..." \
     --request POST \
     --data @payload.json \
-    https://vault.rocks/v1/identity/lookup/group
+    http://127.0.0.1:8200/v1/identity/lookup/group
 ```
 
 ### Sample Response

@@ -1,6 +1,7 @@
 ---
 layout: "docs"
 page_title: "Install Vault"
+sidebar_title: "Installing Vault"
 sidebar_current: "docs-install-install"
 description: |-
   Installing Vault is simple. You can download a precompiled binary or compile
@@ -41,7 +42,7 @@ as a copy of [`git`](https://www.git-scm.com/) in your `PATH`.
   1. Clone the Vault repository from GitHub into your `GOPATH`:
 
     ```shell
-    $ mkdir -p $GOPATH/src/github.com/hashicorp && cd $!
+    $ mkdir -p $GOPATH/src/github.com/hashicorp && cd $_
     $ git clone https://github.com/hashicorp/vault.git
     $ cd vault
     ```

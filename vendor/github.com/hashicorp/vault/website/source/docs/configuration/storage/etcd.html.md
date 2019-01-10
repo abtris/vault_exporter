@@ -1,6 +1,7 @@
 ---
 layout: "docs"
 page_title: "Etcd - Storage Backends - Configuration"
+sidebar_title: "Etcd"
 sidebar_current: "docs-configuration-storage-etcd"
 description: |-
   The Etcd storage backend is used to persist Vault's data in Etcd. It supports
@@ -45,11 +46,11 @@ storage "etcd" {
   version is 3.1+ and there has been no data written using the v2 API, the
   auto-detected default is v3.
 
-- `ha_enabled` `(bool: false)` – Specifies if high availability should be
+- `ha_enabled` `(string: "false")` – Specifies if high availability should be
   enabled. This can also be provided via the environment variable
   `ETCD_HA_ENABLED`.
 
-- `path` `(string: "vault/")` – Specifies the path in Etcd where Vault data will
+- `path` `(string: "/vault/")` – Specifies the path in Etcd where Vault data will
   be stored.
 
 - `sync` `(string: "true")` – Specifies whether to sync the list of available
@@ -117,7 +118,7 @@ This example show enabling high availability for the Etcd storage backend.
 api_addr = "https://vault-leader.my-company.internal"
 
 storage "etcd" {
-  ha_enabled    = true
+  ha_enabled    = "true"
   ...
 }
 ```

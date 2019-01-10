@@ -1,7 +1,8 @@
 ---
 layout: "api"
 page_title: "/sys/seal-status - HTTP API"
-sidebar_current: "docs-http-system-seal-status"
+sidebar_title: "<tt>/sys/seal-status</tt>"
+sidebar_current: "api-http-system-seal-status"
 description: |-
   The `/sys/seal-status` endpoint is used to check the seal status of a Vault.
 ---
@@ -23,7 +24,7 @@ endpoint.
 
 ```
 $ curl \
-    https://vault.rocks/v1/sys/seal-status
+    http://127.0.0.1:8200/v1/sys/seal-status
 ```
 
 ### Sample Response

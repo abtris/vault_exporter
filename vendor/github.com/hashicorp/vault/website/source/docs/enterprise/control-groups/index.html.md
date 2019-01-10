@@ -1,6 +1,7 @@
 ---
 layout: "docs"
 page_title: "Vault Enterprise Control Groups"
+sidebar_title: "Control Groups"
 sidebar_current: "docs-vault-enterprise-control-groups"
 description: |-
   Vault Enterprise has support for Control Group Authorization.
@@ -15,7 +16,7 @@ add additional authorization factors to be required before satisfying a request.
 When a Control Group is required for a request, a limited duration response
 wrapping token is returned to the user instead of the requested data. The
 accessor of the response wrapping token can be passed to the authorizers 
-required by the control group policy. Once all authorizations are satisified,
+required by the control group policy. Once all authorizations are satisfied,
 the wrapping token can be used to unwrap and process the original request.
 
 ## Control Group Factors
